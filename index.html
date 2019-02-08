@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<HTML>
+    <Head>
+        <title>moneyClocker</title>
+        <link rel="stylesheet" type="text/css" href="moneyClockerStyles.css?v=1.7">
+        <script src="gameSource.js?v=1.12"></script>		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta lang="en">
+		<meta charset="utf-8"/>
+		<audio id="tickAudio">
+			<source src="tick.mp3" type="audio/mp3">
+			<source src="tick.aiff" type="audio/aiff">
+		</audio>
+	</Head>
+
+    <Body>
+		<Header>
+			<h1>moneyClocker</h1>
+		</Header>
+        <script>
+            gameMain();
+        </script>
+
+        <div id="time">
+            Time Points:
+            <div id="timeValue">
+            </div>
+			<button id="upgradeToggle" onclick="showMenu('upgrade', 0)">Show upgrade Menu</button>
+			<button id="credits" onclick="credits()">Open Credits</button>
+			<button id="gameRestart" onclick="gameRestart()">Restart Game</button>
+			<br>
+			<button id="settingsToggle" onclick="showMenu('settings', 1)">Show settings Menu</button>
+        </div>
+
+		<div id="upgradeDiv">
+			<table id="menu">
+				<tr>
+					<th colspan="3">Upgrade Menu</h3></th>
+				</tr>
+				<tr>
+					<th>Upgrade Buttons</th>
+					<th>Upgrade Price</th>
+					<th>Upgrade Level</th>
+				</tr>
+				<tr>
+					<th><button onclick="clockAdd()">Upgrade Clock</button></th>
+					<th id="clockPrice"></th>
+					<th id="clocks"></th>
+				</tr>
+				<tr>
+					<th><button>Null</button></th>
+					<th>Null</th>
+					<th>Null</th>
+				</tr>
+			</table>
+		</div>
+		
+		<div id="settingsDiv">
+			<script>
+				createSettings();
+			</script>
+		</div>
+
+        <div id="clock"> 
+            <image class="stack" id="clockBase" src="clockBase.png" alt="clockBase"></image>
+            <image class="stack" id="clockHand" src="clockHand.png" alt="clockHand"></image>
+        </div>
+
+        <script>
+        timeUpdate();
+        clockUpdate();
+        </script>
+        
+    </Body>
+    
+</HTML>

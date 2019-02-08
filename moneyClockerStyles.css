@@ -1,0 +1,43 @@
+#clock {
+    position: relative;
+	margin-top: 4em;
+}
+.stack {
+    position: absolute;
+}
+
+#clockBase {
+    z-index: 1;
+}
+#clockHand {
+    z-index: 2;
+}
+#upgradeDiv {
+	z-index: 3;
+	position: absolute;
+	background-color: #ffffff;
+	display: none;
+	float: left;
+	border: 2px solid #000000;
+}
+#menu td, #menu th {
+    border: 1px solid #000000;
+}
+#creditsList td, #creditsList th {
+    border: 1px solid #000000;
+	text-align: left;
+}
+#wealthValue {
+	margin-bottom: 1em;
+}
+#settingsDiv {
+	z-index: 3;
+	position: absolute;
+	background-color: #ffffff;
+	display: none;
+	float: left;
+	border: 2px solid #000000;
+}
+#menuSettings td, #menuSettings th {
+    border: 1px solid #000000;
+}
