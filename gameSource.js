@@ -14,6 +14,9 @@ var upgradeMenu = null;
 var displayToggle = null;
 var tickAudio = null;
 var soundSwitch = 1;
+var tempMenuNum = -1;
+var tempMenuToggle = null;
+var tempMenu = null;
 var displayToggleState = [
 	false,
 	false
@@ -35,7 +38,7 @@ function gameMain() {
 
 function timeUpdate() { //Updates the screens and logs current time values.
     document.getElementById('timeValue').innerHTML = time;
-    //console.log('time: ' + time);
+    console.log('time: ' + time);
 }
 
 function clockUpdate() {
@@ -89,10 +92,12 @@ function showMenu(menu, menuNum) {
 		console.log(displayToggleState.findIndex(arrayTrue));
 
 		for(x = 0; displayToggleState.some(arrayTrue) == true; x = 0) {
-			tempMenuNum = menusList[displayToggleState.findIndex(arrayTrue)];
-			document.getElementById(menusList[tempMenuNum] + 'Div').style.display = 'none';
-			displayToggle.innerHTML = 'Show ' + menusList[tempMenuNum] + ' Menu';
-			displayToggleState[tempMenuNum] = false;
+			tempMenuNum = displayToggleState.findIndex(arrayTrue);
+            tempMenu = document.getElementById(menusList[tempMenuNum] + 'Div');
+            //tempMenuToggle = document.getElementById(menusList[tempMenuNum] + 'Toggle');
+			tempMenu.style.display = 'none';
+			tempMenuToggle.innerHTML = 'Show ' + menusList[tempMenuNum] + ' Menu';
+			displayToggleState[tempMenu] = false;
 		}
 
 		upgradeDiv.style.display = 'inline-block';
